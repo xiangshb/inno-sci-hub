@@ -9,8 +9,11 @@ import { Badge } from '@/components/ui/badge';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { VisualizationAnalysis } from '@/entities';
+import { useLanguageStore } from '@/lib/language-store';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function VisualizationsPage() {
+  const { t } = useLanguageStore();
   const [visualizations, setVisualizations] = useState<VisualizationAnalysis[]>([]);
   const [filteredVisualizations, setFilteredVisualizations] = useState<VisualizationAnalysis[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -72,9 +75,9 @@ export default function VisualizationsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="font-heading text-6xl text-white mb-6">Visualization Analysis</h1>
+            <h1 className="font-heading text-6xl text-white mb-6">{t('visualizations.title')}</h1>
             <p className="font-paragraph text-white/90 text-lg max-w-3xl mx-auto">
-              Transform complex scientific data into compelling visual narratives that reveal hidden patterns, trends, and breakthrough opportunities.
+              {t('visualizations.description')}
             </p>
           </motion.div>
         </div>

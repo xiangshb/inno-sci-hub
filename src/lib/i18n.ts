@@ -89,6 +89,38 @@ export const translations = {
       keyMetrics: 'Key Metrics',
       source: 'Source',
     },
+    // Core Features Section
+    coreFeatures: {
+      insightsEngine: {
+        title: 'Scientific Insights Engine',
+        description: 'Advanced AI algorithms generate breakthrough scientific discoveries by analyzing vast datasets and identifying novel patterns across disciplines.',
+        button: 'Explore Insights',
+      },
+      researchPlanning: {
+        title: 'Research Planning System',
+        description: 'Intelligent research path planning that optimizes study methodologies and predicts breakthrough opportunities in scientific exploration.',
+        button: 'View Plans',
+      },
+      aiNetwork: {
+        title: 'Collaborative AI Network',
+        description: 'Interconnected intelligent agents working together to solve complex scientific challenges through distributed knowledge processing.',
+        button: 'Meet Agents',
+      },
+    },
+    // Active Research Section
+    activeResearch: {
+      title: 'Active Research Initiatives',
+      description: 'Ongoing research plans powered by AI-driven methodology optimization and cross-disciplinary knowledge integration.',
+    },
+    // Call to Action
+    cta: {
+      accelerate: {
+        title: 'Accelerate Scientific Discovery',
+        description: 'Join the next generation of researchers leveraging AI-driven insights, collaborative intelligence, and advanced visualization tools to push the boundaries of human knowledge.',
+        button1: 'Start Exploring',
+        button2: 'View Documentation',
+      },
+    },
     // Common
     common: {
       loading: 'Loading...',
@@ -96,6 +128,12 @@ export const translations = {
       backHome: 'Back to Home',
       viewMore: 'View More',
       readMore: 'Read More',
+      viewFullPlan: 'View Full Plan',
+      collaborate: 'Collaborate',
+      explore: 'Explore',
+      integrate: 'Integrate',
+      viewDetails: 'View Details',
+      viewAnalysis: 'View Analysis',
     },
   },
   zh: {
@@ -187,6 +225,38 @@ export const translations = {
       keyMetrics: '关键指标',
       source: '来源',
     },
+    // 核心功能部分
+    coreFeatures: {
+      insightsEngine: {
+        title: '科学洞察引擎',
+        description: '先进的AI算法通过分析海量数据集并识别跨学科的新颖模式来生成突破性的科学发现。',
+        button: '探索洞察',
+      },
+      researchPlanning: {
+        title: '研究规划系统',
+        description: '智能研究路径规划，优化研究方法并预测科学探索中的突破机会。',
+        button: '查看计划',
+      },
+      aiNetwork: {
+        title: '协作AI网络',
+        description: '相互连接的智能代理通过分布式知识处理共同解决复杂的科学挑战。',
+        button: '认识代理',
+      },
+    },
+    // 活跃研究部分
+    activeResearch: {
+      title: '活跃研究计划',
+      description: '由AI驱动的规划系统和跨学科知识整合支持的正在进行的研究计划。',
+    },
+    // 行动号召
+    cta: {
+      accelerate: {
+        title: '加速科学发现',
+        description: '加入下一代研究人员，利用AI驱动的洞察、协作智能和先进的可视化工具来推动人类知识的边界。',
+        button1: '开始探索',
+        button2: '查看文档',
+      },
+    },
     // 通用
     common: {
       loading: '加载中...',
@@ -194,6 +264,12 @@ export const translations = {
       backHome: '返回首页',
       viewMore: '查看更多',
       readMore: '阅读更多',
+      viewFullPlan: '查看完整计划',
+      collaborate: '协作',
+      explore: '探索',
+      integrate: '集成',
+      viewDetails: '查看详情',
+      viewAnalysis: '查看分析',
     },
   },
 };

@@ -169,13 +169,13 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-blue-light rounded-full flex items-center justify-center mx-auto mb-6">
                 <Lightbulb className="w-8 h-8 text-secondary" />
               </div>
-              <h3 className="font-heading text-2xl text-darktext mb-4">Scientific Insights Engine</h3>
+              <h3 className="font-heading text-2xl text-darktext mb-4">{t('coreFeatures.insightsEngine.title')}</h3>
               <p className="font-paragraph text-darktext/80 leading-relaxed">
-                Advanced AI algorithms generate breakthrough scientific discoveries by analyzing vast datasets and identifying novel patterns across disciplines.
+                {t('coreFeatures.insightsEngine.description')}
               </p>
               <Link to="/insights">
                 <Button className="mt-6 bg-secondary text-secondary-foreground hover:bg-secondary/90">
-                  Explore Insights
+                  {t('coreFeatures.insightsEngine.button')}
                 </Button>
               </Link>
             </motion.div>
@@ -190,13 +190,13 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-accent-light rounded-full flex items-center justify-center mx-auto mb-6">
                 <Microscope className="w-8 h-8 text-accent" />
               </div>
-              <h3 className="font-heading text-2xl text-darktext mb-4">Research Planning System</h3>
+              <h3 className="font-heading text-2xl text-darktext mb-4">{t('coreFeatures.researchPlanning.title')}</h3>
               <p className="font-paragraph text-darktext/80 leading-relaxed">
-                Intelligent research path planning that optimizes study methodologies and predicts breakthrough opportunities in scientific exploration.
+                {t('coreFeatures.researchPlanning.description')}
               </p>
               <Link to="/research-plans">
                 <Button className="mt-6 bg-accent text-white hover:bg-accent/90">
-                  View Plans
+                  {t('coreFeatures.researchPlanning.button')}
                 </Button>
               </Link>
             </motion.div>
@@ -211,13 +211,13 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-blue-light rounded-full flex items-center justify-center mx-auto mb-6">
                 <Network className="w-8 h-8 text-secondary" />
               </div>
-              <h3 className="font-heading text-2xl text-darktext mb-4">Collaborative AI Network</h3>
+              <h3 className="font-heading text-2xl text-darktext mb-4">{t('coreFeatures.aiNetwork.title')}</h3>
               <p className="font-paragraph text-darktext/80 leading-relaxed">
-                Interconnected intelligent agents working together to solve complex scientific challenges through distributed knowledge processing.
+                {t('coreFeatures.aiNetwork.description')}
               </p>
               <Link to="/agents">
                 <Button className="mt-6 bg-secondary text-secondary-foreground hover:bg-secondary/90">
-                  Meet Agents
+                  {t('coreFeatures.aiNetwork.button')}
                 </Button>
               </Link>
             </motion.div>
@@ -229,9 +229,9 @@ export default function HomePage() {
       <section className="w-full bg-blue-light">
         <div className="max-w-[100rem] mx-auto px-8 py-24">
           <div className="text-center mb-16">
-            <h2 className="font-heading text-5xl text-darktext mb-6">Active Research Initiatives</h2>
+            <h2 className="font-heading text-5xl text-darktext mb-6">{t('activeResearch.title')}</h2>
             <p className="font-paragraph text-darktext/80 text-lg max-w-3xl mx-auto">
-              Ongoing research plans powered by AI-driven methodology optimization and cross-disciplinary knowledge integration.
+              {t('activeResearch.description')}
             </p>
           </div>
 
@@ -290,17 +290,17 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="font-heading text-5xl text-white mb-6">
-              Accelerate Scientific Discovery
+              {t('cta.accelerate.title')}
             </h2>
             <p className="font-paragraph text-white/90 text-lg mb-12 max-w-3xl mx-auto">
-              Join the next generation of researchers leveraging AI-driven insights, collaborative intelligence, and advanced visualization tools to push the boundaries of human knowledge.
+              {t('cta.accelerate.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button size="lg" className="bg-white text-secondary hover:bg-white/90 font-semibold">
-                Start Exploring
+                {t('cta.accelerate.button1')}
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                View Documentation
+                {t('cta.accelerate.button2')}
               </Button>
             </div>
           </motion.div>
