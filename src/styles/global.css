@@ -3,3 +3,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Override italic font styles to normal */
+* {
+  font-style: normal !important;
+}
