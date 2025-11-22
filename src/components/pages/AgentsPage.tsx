@@ -8,8 +8,11 @@ import { Badge } from '@/components/ui/badge';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { IntelligentAgents } from '@/entities';
+import { useLanguageStore } from '@/lib/language-store';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function AgentsPage() {
+  const { t } = useLanguageStore();
   const [agents, setAgents] = useState<IntelligentAgents[]>([]);
   const [selectedSpecialization, setSelectedSpecialization] = useState<string>('all');
 
@@ -74,13 +77,14 @@ export default function AgentsPage() {
               ← SCIENTIFIC DISCOVERY PLATFORM
             </Link>
             <div className="hidden md:flex space-x-8 text-darktext font-paragraph text-sm">
-              <Link to="/insights" className="hover:text-secondary transition-colors">Insights</Link>
-              <Link to="/research-plans" className="hover:text-secondary transition-colors">Research Plans</Link>
-              <Link to="/agents" className="text-secondary font-semibold">AI Agents</Link>
-              <Link to="/tools" className="hover:text-secondary transition-colors">Tools</Link>
-              <Link to="/knowledge" className="hover:text-secondary transition-colors">Knowledge Network</Link>
-              <Link to="/visualizations" className="hover:text-secondary transition-colors">Visualizations</Link>
+              <Link to="/insights" className="hover:text-secondary transition-colors">{t('nav.insights')}</Link>
+              <Link to="/research-plans" className="hover:text-secondary transition-colors">{t('nav.researchPlans')}</Link>
+              <Link to="/agents" className="text-secondary font-semibold">{t('nav.agents')}</Link>
+              <Link to="/tools" className="hover:text-secondary transition-colors">{t('nav.tools')}</Link>
+              <Link to="/knowledge" className="hover:text-secondary transition-colors">{t('nav.knowledge')}</Link>
+              <Link to="/visualizations" className="hover:text-secondary transition-colors">{t('nav.visualizations')}</Link>
             </div>
+            <LanguageSwitcher />
           </div>
         </div>
       </nav>
@@ -93,9 +97,9 @@ export default function AgentsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="font-heading text-6xl text-white mb-6">AI Research Agents</h1>
+            <h1 className="font-heading text-6xl text-white mb-6">{t('agents.title')}</h1>
             <p className="font-paragraph text-white/90 text-lg max-w-3xl mx-auto">
-              Meet our collaborative network of intelligent agents, each specialized in different scientific domains and working together to accelerate discovery.
+              {t('agents.description')}
             </p>
           </motion.div>
         </div>

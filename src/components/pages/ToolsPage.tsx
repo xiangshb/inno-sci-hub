@@ -8,8 +8,11 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { BaseCrudService } from '@/integrations';
 import { IntelligentTools } from '@/entities';
+import { useLanguageStore } from '@/lib/language-store';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function ToolsPage() {
+  const { t } = useLanguageStore();
   const [tools, setTools] = useState<IntelligentTools[]>([]);
   const [filteredTools, setFilteredTools] = useState<IntelligentTools[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -89,13 +92,14 @@ export default function ToolsPage() {
               ← SCIENTIFIC DISCOVERY PLATFORM
             </Link>
             <div className="hidden md:flex space-x-8 text-darktext font-paragraph text-sm">
-              <Link to="/insights" className="hover:text-secondary transition-colors">Insights</Link>
-              <Link to="/research-plans" className="hover:text-secondary transition-colors">Research Plans</Link>
-              <Link to="/agents" className="hover:text-secondary transition-colors">AI Agents</Link>
-              <Link to="/tools" className="text-secondary font-semibold">Tools</Link>
-              <Link to="/knowledge" className="hover:text-secondary transition-colors">Knowledge Network</Link>
-              <Link to="/visualizations" className="hover:text-secondary transition-colors">Visualizations</Link>
+              <Link to="/insights" className="hover:text-secondary transition-colors">{t('nav.insights')}</Link>
+              <Link to="/research-plans" className="hover:text-secondary transition-colors">{t('nav.researchPlans')}</Link>
+              <Link to="/agents" className="hover:text-secondary transition-colors">{t('nav.agents')}</Link>
+              <Link to="/tools" className="text-secondary font-semibold">{t('nav.tools')}</Link>
+              <Link to="/knowledge" className="hover:text-secondary transition-colors">{t('nav.knowledge')}</Link>
+              <Link to="/visualizations" className="hover:text-secondary transition-colors">{t('nav.visualizations')}</Link>
             </div>
+            <LanguageSwitcher />
           </div>
         </div>
       </nav>
@@ -108,9 +112,9 @@ export default function ToolsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="font-heading text-6xl text-white mb-6">Intelligent Tools</h1>
+            <h1 className="font-heading text-6xl text-white mb-6">{t('tools.title')}</h1>
             <p className="font-paragraph text-white/90 text-lg max-w-3xl mx-auto">
-              Discover our comprehensive ecosystem of intelligent tools designed to enhance scientific research, data analysis, and knowledge discovery.
+              {t('tools.description')}
             </p>
           </motion.div>
         </div>

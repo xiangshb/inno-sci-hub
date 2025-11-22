@@ -8,8 +8,11 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { BaseCrudService } from '@/integrations';
 import { ResearchPlans } from '@/entities';
+import { useLanguageStore } from '@/lib/language-store';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function ResearchPlansPage() {
+  const { t } = useLanguageStore();
   const [plans, setPlans] = useState<ResearchPlans[]>([]);
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
 
@@ -83,13 +86,14 @@ export default function ResearchPlansPage() {
               ← SCIENTIFIC DISCOVERY PLATFORM
             </Link>
             <div className="hidden md:flex space-x-8 text-darktext font-paragraph text-sm">
-              <Link to="/insights" className="hover:text-secondary transition-colors">Insights</Link>
-              <Link to="/research-plans" className="text-secondary font-semibold">Research Plans</Link>
-              <Link to="/agents" className="hover:text-secondary transition-colors">AI Agents</Link>
-              <Link to="/tools" className="hover:text-secondary transition-colors">Tools</Link>
-              <Link to="/knowledge" className="hover:text-secondary transition-colors">Knowledge Network</Link>
-              <Link to="/visualizations" className="hover:text-secondary transition-colors">Visualizations</Link>
+              <Link to="/insights" className="hover:text-secondary transition-colors">{t('nav.insights')}</Link>
+              <Link to="/research-plans" className="text-secondary font-semibold">{t('nav.researchPlans')}</Link>
+              <Link to="/agents" className="hover:text-secondary transition-colors">{t('nav.agents')}</Link>
+              <Link to="/tools" className="hover:text-secondary transition-colors">{t('nav.tools')}</Link>
+              <Link to="/knowledge" className="hover:text-secondary transition-colors">{t('nav.knowledge')}</Link>
+              <Link to="/visualizations" className="hover:text-secondary transition-colors">{t('nav.visualizations')}</Link>
             </div>
+            <LanguageSwitcher />
           </div>
         </div>
       </nav>
@@ -102,9 +106,9 @@ export default function ResearchPlansPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="font-heading text-6xl text-white mb-6">Research Plans</h1>
+            <h1 className="font-heading text-6xl text-white mb-6">{t('researchPlans.title')}</h1>
             <p className="font-paragraph text-white/90 text-lg max-w-3xl mx-auto">
-              Strategic research initiatives designed by AI-driven planning systems to maximize scientific breakthrough potential and optimize resource allocation.
+              {t('researchPlans.description')}
             </p>
           </motion.div>
         </div>

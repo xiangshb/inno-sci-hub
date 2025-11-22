@@ -8,8 +8,11 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { BaseCrudService } from '@/integrations';
 import { KnowledgeNetworkConcepts } from '@/entities';
+import { useLanguageStore } from '@/lib/language-store';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function KnowledgePage() {
+  const { t } = useLanguageStore();
   const [concepts, setConcepts] = useState<KnowledgeNetworkConcepts[]>([]);
   const [filteredConcepts, setFilteredConcepts] = useState<KnowledgeNetworkConcepts[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -76,13 +79,14 @@ export default function KnowledgePage() {
               ← SCIENTIFIC DISCOVERY PLATFORM
             </Link>
             <div className="hidden md:flex space-x-8 text-darktext font-paragraph text-sm">
-              <Link to="/insights" className="hover:text-secondary transition-colors">Insights</Link>
-              <Link to="/research-plans" className="hover:text-secondary transition-colors">Research Plans</Link>
-              <Link to="/agents" className="hover:text-secondary transition-colors">AI Agents</Link>
-              <Link to="/tools" className="hover:text-secondary transition-colors">Tools</Link>
-              <Link to="/knowledge" className="text-secondary font-semibold">Knowledge Network</Link>
-              <Link to="/visualizations" className="hover:text-secondary transition-colors">Visualizations</Link>
+              <Link to="/insights" className="hover:text-secondary transition-colors">{t('nav.insights')}</Link>
+              <Link to="/research-plans" className="hover:text-secondary transition-colors">{t('nav.researchPlans')}</Link>
+              <Link to="/agents" className="hover:text-secondary transition-colors">{t('nav.agents')}</Link>
+              <Link to="/tools" className="hover:text-secondary transition-colors">{t('nav.tools')}</Link>
+              <Link to="/knowledge" className="text-secondary font-semibold">{t('nav.knowledge')}</Link>
+              <Link to="/visualizations" className="hover:text-secondary transition-colors">{t('nav.visualizations')}</Link>
             </div>
+            <LanguageSwitcher />
           </div>
         </div>
       </nav>
@@ -95,9 +99,9 @@ export default function KnowledgePage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="font-heading text-6xl text-white mb-6">Knowledge Network</h1>
+            <h1 className="font-heading text-6xl text-white mb-6">{t('knowledge.title')}</h1>
             <p className="font-paragraph text-white/90 text-lg max-w-3xl mx-auto">
-              Explore the interconnected web of scientific concepts, theories, and methodologies that form the foundation of modern research and discovery.
+              {t('knowledge.description')}
             </p>
           </motion.div>
         </div>

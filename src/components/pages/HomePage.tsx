@@ -7,8 +7,11 @@ import { Card } from '@/components/ui/card';
 import { Image } from '@/components/ui/image';
 import { BaseCrudService } from '@/integrations';
 import { ScientificInsights, ResearchPlans, IntelligentAgents } from '@/entities';
+import { useLanguageStore } from '@/lib/language-store';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function HomePage() {
+  const { t } = useLanguageStore();
   const [insights, setInsights] = useState<ScientificInsights[]>([]);
   const [plans, setPlans] = useState<ResearchPlans[]>([]);
   const [agents, setAgents] = useState<IntelligentAgents[]>([]);
@@ -42,16 +45,19 @@ export default function HomePage() {
             SCIENTIFIC DISCOVERY PLATFORM
           </div>
           <div className="hidden md:flex space-x-8 text-darktext font-paragraph text-sm">
-            <Link to="/insights" className="hover:text-secondary transition-colors">Insights</Link>
-            <Link to="/research-plans" className="hover:text-secondary transition-colors">Research Plans</Link>
-            <Link to="/agents" className="hover:text-secondary transition-colors">AI Agents</Link>
-            <Link to="/tools" className="hover:text-secondary transition-colors">Tools</Link>
-            <Link to="/knowledge" className="hover:text-secondary transition-colors">Knowledge Network</Link>
-            <Link to="/visualizations" className="hover:text-secondary transition-colors">Visualizations</Link>
+            <Link to="/insights" className="hover:text-secondary transition-colors">{t('nav.insights')}</Link>
+            <Link to="/research-plans" className="hover:text-secondary transition-colors">{t('nav.researchPlans')}</Link>
+            <Link to="/agents" className="hover:text-secondary transition-colors">{t('nav.agents')}</Link>
+            <Link to="/tools" className="hover:text-secondary transition-colors">{t('nav.tools')}</Link>
+            <Link to="/knowledge" className="hover:text-secondary transition-colors">{t('nav.knowledge')}</Link>
+            <Link to="/visualizations" className="hover:text-secondary transition-colors">{t('nav.visualizations')}</Link>
           </div>
-          <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
-            Dashboard
-          </Button>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
+              Dashboard
+            </Button>
+          </div>
         </div>
       </nav>
 
@@ -253,13 +259,13 @@ export default function HomePage() {
                   </p>
                   <div className="space-y-3 mb-6">
                     <div className="flex justify-between text-sm">
-                      <span className="font-paragraph text-darktext/60">Start Date</span>
+                      <span className="font-paragraph text-darktext/60">{t('researchPlans.startDate')}</span>
                       <span className="font-paragraph text-darktext">
                         {plan.startDate ? new Date(plan.startDate).toLocaleDateString() : 'TBD'}
                       </span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="font-paragraph text-darktext/60">End Date</span>
+                      <span className="font-paragraph text-darktext/60">{t('researchPlans.endDate')}</span>
                       <span className="font-paragraph text-darktext">
                         {plan.endDate ? new Date(plan.endDate).toLocaleDateString() : 'TBD'}
                       </span>
