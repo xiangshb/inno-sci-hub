@@ -80,19 +80,19 @@ export default function ToolsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="w-full bg-primary border-b border-subtleborder">
+      <nav className="w-full bg-white border-b border-subtleborder">
         <div className="max-w-[100rem] mx-auto px-8 py-6">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-primary-foreground font-paragraph text-sm tracking-wider hover:text-secondary transition-colors">
+            <Link to="/" className="text-darktext font-paragraph text-sm tracking-wider hover:text-secondary transition-colors">
               ← SCIENTIFIC DISCOVERY PLATFORM
             </Link>
-            <div className="hidden md:flex space-x-8 text-primary-foreground font-paragraph text-sm">
+            <div className="hidden md:flex space-x-8 text-darktext font-paragraph text-sm">
               <Link to="/insights" className="hover:text-secondary transition-colors">Insights</Link>
               <Link to="/research-plans" className="hover:text-secondary transition-colors">Research Plans</Link>
               <Link to="/agents" className="hover:text-secondary transition-colors">AI Agents</Link>
-              <Link to="/tools" className="text-secondary">Tools</Link>
+              <Link to="/tools" className="text-secondary font-semibold">Tools</Link>
               <Link to="/knowledge" className="hover:text-secondary transition-colors">Knowledge Network</Link>
               <Link to="/visualizations" className="hover:text-secondary transition-colors">Visualizations</Link>
             </div>
@@ -101,15 +101,15 @@ export default function ToolsPage() {
       </nav>
 
       {/* Header */}
-      <section className="w-full bg-primary">
+      <section className="w-full bg-gradient-to-r from-accent to-secondary">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="font-heading text-6xl text-primary-foreground mb-6">Intelligent Tools</h1>
-            <p className="font-paragraph text-primary-foreground/80 text-lg max-w-3xl mx-auto">
+            <h1 className="font-heading text-6xl text-white mb-6">Intelligent Tools</h1>
+            <p className="font-paragraph text-white/90 text-lg max-w-3xl mx-auto">
               Discover our comprehensive ecosystem of intelligent tools designed to enhance scientific research, data analysis, and knowledge discovery.
             </p>
           </motion.div>
@@ -117,7 +117,7 @@ export default function ToolsPage() {
       </section>
 
       {/* Filters and Search */}
-      <section className="w-full bg-background border-b border-subtleborder">
+      <section className="w-full bg-white border-b border-subtleborder">
         <div className="max-w-[100rem] mx-auto px-8 py-8">
           <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
             <div className="flex-1 max-w-md">
@@ -150,7 +150,7 @@ export default function ToolsPage() {
       </section>
 
       {/* Tools Grid */}
-      <section className="w-full">
+      <section className="w-full bg-white">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredTools.map((tool, index) => (
@@ -160,7 +160,7 @@ export default function ToolsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="bg-background border-subtleborder p-6 h-full hover:shadow-lg transition-shadow">
+                <Card className="bg-white border-subtleborder p-6 h-full shadow-md hover:shadow-lg transition-shadow">
                   <div className="flex items-start justify-between mb-4">
                     <Badge className={`${getTypeColor(tool.toolType)} flex items-center gap-2`}>
                       {getTypeIcon(tool.toolType)}
@@ -244,7 +244,7 @@ export default function ToolsPage() {
       </section>
 
       {/* Tool Categories */}
-      <section className="w-full bg-mutedolive/10">
+      <section className="w-full bg-green-light">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -326,7 +326,7 @@ export default function ToolsPage() {
       </section>
 
       {/* Statistics */}
-      <section className="w-full bg-background">
+      <section className="w-full bg-blue-light">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <motion.div
@@ -374,27 +374,27 @@ export default function ToolsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="w-full bg-primary">
+      <section className="w-full bg-gradient-to-r from-secondary to-accent">
         <div className="max-w-[100rem] mx-auto px-8 py-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-4xl text-primary-foreground mb-6">
+            <h2 className="font-heading text-4xl text-white mb-6">
               Build with Intelligent Tools
             </h2>
-            <p className="font-paragraph text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="font-paragraph text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Integrate our powerful tools into your research workflow and accelerate scientific discovery with AI-enhanced capabilities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/knowledge">
-                <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
+                <Button size="lg" className="bg-white text-secondary hover:bg-white/90 font-semibold">
                   Explore Knowledge Network
                 </Button>
               </Link>
               <Link to="/agents">
-                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   Meet AI Agents
                 </Button>
               </Link>

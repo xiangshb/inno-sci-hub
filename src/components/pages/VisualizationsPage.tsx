@@ -44,36 +44,36 @@ export default function VisualizationsPage() {
   }, [searchTerm, visualizations]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="w-full bg-primary border-b border-subtleborder">
+      <nav className="w-full bg-white border-b border-subtleborder">
         <div className="max-w-[100rem] mx-auto px-8 py-6">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-primary-foreground font-paragraph text-sm tracking-wider hover:text-secondary transition-colors">
+            <Link to="/" className="text-darktext font-paragraph text-sm tracking-wider hover:text-secondary transition-colors">
               ← SCIENTIFIC DISCOVERY PLATFORM
             </Link>
-            <div className="hidden md:flex space-x-8 text-primary-foreground font-paragraph text-sm">
+            <div className="hidden md:flex space-x-8 text-darktext font-paragraph text-sm">
               <Link to="/insights" className="hover:text-secondary transition-colors">Insights</Link>
               <Link to="/research-plans" className="hover:text-secondary transition-colors">Research Plans</Link>
               <Link to="/agents" className="hover:text-secondary transition-colors">AI Agents</Link>
               <Link to="/tools" className="hover:text-secondary transition-colors">Tools</Link>
               <Link to="/knowledge" className="hover:text-secondary transition-colors">Knowledge Network</Link>
-              <Link to="/visualizations" className="text-secondary">Visualizations</Link>
+              <Link to="/visualizations" className="text-secondary font-semibold">Visualizations</Link>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Header */}
-      <section className="w-full bg-primary">
+      <section className="w-full bg-gradient-to-r from-accent to-secondary">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="font-heading text-6xl text-primary-foreground mb-6">Visualization Analysis</h1>
-            <p className="font-paragraph text-primary-foreground/80 text-lg max-w-3xl mx-auto">
+            <h1 className="font-heading text-6xl text-white mb-6">Visualization Analysis</h1>
+            <p className="font-paragraph text-white/90 text-lg max-w-3xl mx-auto">
               Transform complex scientific data into compelling visual narratives that reveal hidden patterns, trends, and breakthrough opportunities.
             </p>
           </motion.div>
@@ -81,7 +81,7 @@ export default function VisualizationsPage() {
       </section>
 
       {/* Interactive Dashboard Preview */}
-      <section className="w-full bg-mutedolive/10">
+      <section className="w-full bg-green-light">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -100,7 +100,7 @@ export default function VisualizationsPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-background rounded-lg p-6 border border-subtleborder"
+              className="bg-white rounded-lg p-6 border border-subtleborder shadow-sm"
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-paragraph text-darktext font-semibold">Active Research</h3>
@@ -118,7 +118,7 @@ export default function VisualizationsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-background rounded-lg p-6 border border-subtleborder"
+              className="bg-white rounded-lg p-6 border border-subtleborder shadow-sm"
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-paragraph text-darktext font-semibold">Discoveries</h3>
@@ -136,7 +136,7 @@ export default function VisualizationsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-background rounded-lg p-6 border border-subtleborder"
+              className="bg-white rounded-lg p-6 border border-subtleborder shadow-sm"
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-paragraph text-darktext font-semibold">AI Agents</h3>
@@ -154,7 +154,7 @@ export default function VisualizationsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="bg-background rounded-lg p-6 border border-subtleborder"
+              className="bg-white rounded-lg p-6 border border-subtleborder shadow-sm"
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="font-paragraph text-darktext font-semibold">Efficiency</h3>
@@ -174,7 +174,7 @@ export default function VisualizationsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="bg-background rounded-lg p-8 border border-subtleborder"
+            className="bg-white rounded-lg p-8 border border-subtleborder shadow-sm"
           >
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-heading text-2xl text-darktext">Research Progress Timeline</h3>
@@ -191,7 +191,7 @@ export default function VisualizationsPage() {
       </section>
 
       {/* Search */}
-      <section className="w-full bg-background border-b border-subtleborder">
+      <section className="w-full bg-white border-b border-subtleborder">
         <div className="max-w-[100rem] mx-auto px-8 py-8">
           <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
             <div className="flex-1 max-w-md">
@@ -217,7 +217,7 @@ export default function VisualizationsPage() {
       </section>
 
       {/* Visualizations Grid */}
-      <section className="w-full">
+      <section className="w-full bg-white">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredVisualizations.map((viz, index) => (
@@ -227,7 +227,7 @@ export default function VisualizationsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="bg-background border-subtleborder overflow-hidden h-full hover:shadow-lg transition-shadow">
+                <Card className="bg-white border-subtleborder overflow-hidden h-full shadow-md hover:shadow-lg transition-shadow">
                   {/* Visualization Image */}
                   {viz.visualizationImage && (
                     <div className="w-full h-48 bg-mutedolive/10">
@@ -312,7 +312,7 @@ export default function VisualizationsPage() {
       </section>
 
       {/* Visualization Types */}
-      <section className="w-full bg-mutedolive/10">
+      <section className="w-full bg-blue-light">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -394,7 +394,7 @@ export default function VisualizationsPage() {
       </section>
 
       {/* Statistics */}
-      <section className="w-full bg-background">
+      <section className="w-full bg-green-light">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <motion.div
@@ -442,27 +442,27 @@ export default function VisualizationsPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="w-full bg-primary">
+      <section className="w-full bg-gradient-to-r from-secondary to-accent">
         <div className="max-w-[100rem] mx-auto px-8 py-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-4xl text-primary-foreground mb-6">
+            <h2 className="font-heading text-4xl text-white mb-6">
               Transform Data into Discovery
             </h2>
-            <p className="font-paragraph text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="font-paragraph text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Leverage our advanced visualization tools to uncover hidden patterns in your research data and accelerate scientific breakthroughs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/tools">
-                <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
+                <Button size="lg" className="bg-white text-secondary hover:bg-white/90 font-semibold">
                   Explore Tools
                 </Button>
               </Link>
               <Link to="/insights">
-                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   View Insights
                 </Button>
               </Link>

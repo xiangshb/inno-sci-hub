@@ -74,17 +74,17 @@ export default function ResearchPlansPage() {
   const uniqueStatuses = Array.from(new Set(plans.map(plan => plan.status).filter(Boolean)));
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="w-full bg-primary border-b border-subtleborder">
+      <nav className="w-full bg-white border-b border-subtleborder">
         <div className="max-w-[100rem] mx-auto px-8 py-6">
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-primary-foreground font-paragraph text-sm tracking-wider hover:text-secondary transition-colors">
+            <Link to="/" className="text-darktext font-paragraph text-sm tracking-wider hover:text-secondary transition-colors">
               ← SCIENTIFIC DISCOVERY PLATFORM
             </Link>
-            <div className="hidden md:flex space-x-8 text-primary-foreground font-paragraph text-sm">
+            <div className="hidden md:flex space-x-8 text-darktext font-paragraph text-sm">
               <Link to="/insights" className="hover:text-secondary transition-colors">Insights</Link>
-              <Link to="/research-plans" className="text-secondary">Research Plans</Link>
+              <Link to="/research-plans" className="text-secondary font-semibold">Research Plans</Link>
               <Link to="/agents" className="hover:text-secondary transition-colors">AI Agents</Link>
               <Link to="/tools" className="hover:text-secondary transition-colors">Tools</Link>
               <Link to="/knowledge" className="hover:text-secondary transition-colors">Knowledge Network</Link>
@@ -95,15 +95,15 @@ export default function ResearchPlansPage() {
       </nav>
 
       {/* Header */}
-      <section className="w-full bg-primary">
+      <section className="w-full bg-gradient-to-r from-secondary to-accent">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="font-heading text-6xl text-primary-foreground mb-6">Research Plans</h1>
-            <p className="font-paragraph text-primary-foreground/80 text-lg max-w-3xl mx-auto">
+            <h1 className="font-heading text-6xl text-white mb-6">Research Plans</h1>
+            <p className="font-paragraph text-white/90 text-lg max-w-3xl mx-auto">
               Strategic research initiatives designed by AI-driven planning systems to maximize scientific breakthrough potential and optimize resource allocation.
             </p>
           </motion.div>
@@ -111,7 +111,7 @@ export default function ResearchPlansPage() {
       </section>
 
       {/* Filters */}
-      <section className="w-full bg-background border-b border-subtleborder">
+      <section className="w-full bg-white border-b border-subtleborder">
         <div className="max-w-[100rem] mx-auto px-8 py-8">
           <div className="flex flex-wrap gap-4 items-center">
             <span className="font-paragraph text-darktext/60 text-sm">Filter by status:</span>
@@ -119,7 +119,7 @@ export default function ResearchPlansPage() {
               variant={selectedStatus === 'all' ? 'default' : 'outline'}
               size="sm"
               onClick={() => setSelectedStatus('all')}
-              className={selectedStatus === 'all' ? 'bg-secondary text-secondary-foreground' : 'border-subtleborder text-darktext hover:bg-secondary hover:text-secondary-foreground'}
+              className={selectedStatus === 'all' ? 'bg-secondary text-white' : 'border-subtleborder text-darktext hover:bg-secondary hover:text-white'}
             >
               All Plans
             </Button>
@@ -129,7 +129,7 @@ export default function ResearchPlansPage() {
                 variant={selectedStatus === status ? 'default' : 'outline'}
                 size="sm"
                 onClick={() => setSelectedStatus(status || '')}
-                className={selectedStatus === status ? 'bg-secondary text-secondary-foreground' : 'border-subtleborder text-darktext hover:bg-secondary hover:text-secondary-foreground'}
+                className={selectedStatus === status ? 'bg-secondary text-white' : 'border-subtleborder text-darktext hover:bg-secondary hover:text-white'}
               >
                 {status}
               </Button>
@@ -139,7 +139,7 @@ export default function ResearchPlansPage() {
       </section>
 
       {/* Research Plans Grid */}
-      <section className="w-full">
+      <section className="w-full bg-white">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {filteredPlans.map((plan, index) => (
@@ -149,7 +149,7 @@ export default function ResearchPlansPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="bg-background border-subtleborder p-8 h-full hover:shadow-lg transition-shadow">
+                <Card className="bg-white border-subtleborder p-8 h-full shadow-md hover:shadow-lg transition-shadow">
                   <div className="flex items-start justify-between mb-6">
                     <Badge className={`${getStatusColor(plan.status)} flex items-center gap-2`}>
                       {getStatusIcon(plan.status)}
@@ -259,7 +259,7 @@ export default function ResearchPlansPage() {
       </section>
 
       {/* Statistics */}
-      <section className="w-full bg-mutedolive/10">
+      <section className="w-full bg-blue-light">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <motion.div
@@ -314,27 +314,27 @@ export default function ResearchPlansPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="w-full bg-primary">
+      <section className="w-full bg-gradient-to-r from-secondary to-accent">
         <div className="max-w-[100rem] mx-auto px-8 py-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-4xl text-primary-foreground mb-6">
+            <h2 className="font-heading text-4xl text-white mb-6">
               Collaborate on Breakthrough Research
             </h2>
-            <p className="font-paragraph text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="font-paragraph text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Join our network of AI agents and researchers to contribute to cutting-edge scientific discoveries.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/agents">
-                <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
+                <Button size="lg" className="bg-white text-secondary hover:bg-white/90 font-semibold">
                   Meet AI Agents
                 </Button>
               </Link>
               <Link to="/insights">
-                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   Explore Insights
                 </Button>
               </Link>

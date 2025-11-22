@@ -34,9 +34,9 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="w-full max-w-[120rem] mx-auto px-8 py-6 border-b border-subtleborder">
+      <nav className="w-full max-w-[120rem] mx-auto px-8 py-6 border-b border-subtleborder bg-white">
         <div className="flex justify-between items-center">
           <div className="text-darktext font-paragraph text-sm tracking-wider font-semibold">
             SCIENTIFIC DISCOVERY PLATFORM
@@ -56,7 +56,7 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="w-full max-w-[120rem] mx-auto px-8 py-20 relative bg-gradient-to-br from-background via-white to-background">
+      <section className="w-full max-w-[120rem] mx-auto px-8 py-20 relative bg-gradient-to-br from-white via-blue-light to-green-light">
         <div className="grid grid-cols-12 gap-8 min-h-[80vh] relative">
           {/* Floating insight cards - positioned like artifacts */}
           {insights.map((insight, index) => (
@@ -71,7 +71,7 @@ export default function HomePage() {
                 'bottom-24 left-32 w-56'
               }`}
             >
-              <Card className="bg-white border-subtleborder shadow-sm hover:shadow-md transition-shadow p-6">
+              <Card className="bg-white border-subtleborder shadow-md hover:shadow-lg transition-shadow p-6">
                 <div className="text-secondary text-xs font-paragraph mb-2 font-semibold">
                   [ {String(index + 1).padStart(2, '0')} ]
                 </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
                 index === 0 ? 'bottom-16 right-8 w-48' : 'top-48 left-16 w-52'
               }`}
             >
-              <Card className="bg-white border-subtleborder shadow-sm hover:shadow-md transition-shadow p-4">
+              <Card className="bg-white border-subtleborder shadow-md hover:shadow-lg transition-shadow p-4">
                 <div className="text-secondary text-xs font-paragraph mb-2 font-semibold">
                   [ AI-{String(index + 1).padStart(2, '0')} ]
                 </div>
@@ -151,7 +151,7 @@ export default function HomePage() {
       </section>
 
       {/* Core Features Section */}
-      <section className="w-full bg-background">
+      <section className="w-full bg-white">
         <div className="max-w-[100rem] mx-auto px-8 py-24">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <motion.div
@@ -160,8 +160,8 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                <Lightbulb className="w-8 h-8 text-secondary-foreground" />
+              <div className="w-16 h-16 bg-blue-light rounded-full flex items-center justify-center mx-auto mb-6">
+                <Lightbulb className="w-8 h-8 text-secondary" />
               </div>
               <h3 className="font-heading text-2xl text-darktext mb-4">Scientific Insights Engine</h3>
               <p className="font-paragraph text-darktext/80 leading-relaxed">
@@ -181,15 +181,15 @@ export default function HomePage() {
               transition={{ delay: 0.1 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                <Microscope className="w-8 h-8 text-secondary-foreground" />
+              <div className="w-16 h-16 bg-accent-light rounded-full flex items-center justify-center mx-auto mb-6">
+                <Microscope className="w-8 h-8 text-accent" />
               </div>
               <h3 className="font-heading text-2xl text-darktext mb-4">Research Planning System</h3>
               <p className="font-paragraph text-darktext/80 leading-relaxed">
                 Intelligent research path planning that optimizes study methodologies and predicts breakthrough opportunities in scientific exploration.
               </p>
               <Link to="/research-plans">
-                <Button className="mt-6 bg-secondary text-secondary-foreground hover:bg-secondary/90">
+                <Button className="mt-6 bg-accent text-white hover:bg-accent/90">
                   View Plans
                 </Button>
               </Link>
@@ -202,8 +202,8 @@ export default function HomePage() {
               transition={{ delay: 0.2 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-                <Network className="w-8 h-8 text-secondary-foreground" />
+              <div className="w-16 h-16 bg-blue-light rounded-full flex items-center justify-center mx-auto mb-6">
+                <Network className="w-8 h-8 text-secondary" />
               </div>
               <h3 className="font-heading text-2xl text-darktext mb-4">Collaborative AI Network</h3>
               <p className="font-paragraph text-darktext/80 leading-relaxed">
@@ -220,7 +220,7 @@ export default function HomePage() {
       </section>
 
       {/* Research Plans Preview */}
-      <section className="w-full bg-white">
+      <section className="w-full bg-blue-light">
         <div className="max-w-[100rem] mx-auto px-8 py-24">
           <div className="text-center mb-16">
             <h2 className="font-heading text-5xl text-darktext mb-6">Active Research Initiatives</h2>
@@ -238,7 +238,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
               >
-                <Card className="bg-background border-subtleborder p-8 h-full shadow-sm hover:shadow-md transition-shadow">
+                <Card className="bg-white border-subtleborder p-8 h-full shadow-md hover:shadow-lg transition-shadow">
                   <div className="flex items-center justify-between mb-6">
                     <span className="text-secondary font-paragraph text-sm font-semibold">
                       {plan.status?.toUpperCase()}
@@ -276,7 +276,7 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action */}
-      <section className="w-full bg-darktext">
+      <section className="w-full bg-gradient-to-r from-secondary to-accent">
         <div className="max-w-[100rem] mx-auto px-8 py-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -286,14 +286,14 @@ export default function HomePage() {
             <h2 className="font-heading text-5xl text-white mb-6">
               Accelerate Scientific Discovery
             </h2>
-            <p className="font-paragraph text-white/80 text-lg mb-12 max-w-3xl mx-auto">
+            <p className="font-paragraph text-white/90 text-lg mb-12 max-w-3xl mx-auto">
               Join the next generation of researchers leveraging AI-driven insights, collaborative intelligence, and advanced visualization tools to push the boundaries of human knowledge.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
+              <Button size="lg" className="bg-white text-secondary hover:bg-white/90 font-semibold">
                 Start Exploring
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-darktext">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                 View Documentation
               </Button>
             </div>
@@ -302,7 +302,7 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="w-full bg-background border-t border-subtleborder">
+      <footer className="w-full bg-white border-t border-subtleborder">
         <div className="max-w-[100rem] mx-auto px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div>
