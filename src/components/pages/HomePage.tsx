@@ -34,14 +34,14 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-primary">
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="w-full max-w-[120rem] mx-auto px-8 py-6">
+      <nav className="w-full max-w-[120rem] mx-auto px-8 py-6 border-b border-subtleborder">
         <div className="flex justify-between items-center">
-          <div className="text-primary-foreground font-paragraph text-sm tracking-wider">
+          <div className="text-darktext font-paragraph text-sm tracking-wider font-semibold">
             SCIENTIFIC DISCOVERY PLATFORM
           </div>
-          <div className="hidden md:flex space-x-8 text-primary-foreground font-paragraph text-sm">
+          <div className="hidden md:flex space-x-8 text-darktext font-paragraph text-sm">
             <Link to="/insights" className="hover:text-secondary transition-colors">Insights</Link>
             <Link to="/research-plans" className="hover:text-secondary transition-colors">Research Plans</Link>
             <Link to="/agents" className="hover:text-secondary transition-colors">AI Agents</Link>
@@ -49,14 +49,14 @@ export default function HomePage() {
             <Link to="/knowledge" className="hover:text-secondary transition-colors">Knowledge Network</Link>
             <Link to="/visualizations" className="hover:text-secondary transition-colors">Visualizations</Link>
           </div>
-          <Button variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+          <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
             Dashboard
           </Button>
         </div>
       </nav>
 
-      {/* Hero Section - Inspired by museum layout */}
-      <section className="w-full max-w-[120rem] mx-auto px-8 py-20 relative">
+      {/* Hero Section */}
+      <section className="w-full max-w-[120rem] mx-auto px-8 py-20 relative bg-gradient-to-br from-background via-white to-background">
         <div className="grid grid-cols-12 gap-8 min-h-[80vh] relative">
           {/* Floating insight cards - positioned like artifacts */}
           {insights.map((insight, index) => (
@@ -71,17 +71,17 @@ export default function HomePage() {
                 'bottom-24 left-32 w-56'
               }`}
             >
-              <Card className="bg-background/10 backdrop-blur-sm border-subtleborder/30 p-6">
-                <div className="text-primary-foreground/60 text-xs font-paragraph mb-2">
+              <Card className="bg-white border-subtleborder shadow-sm hover:shadow-md transition-shadow p-6">
+                <div className="text-secondary text-xs font-paragraph mb-2 font-semibold">
                   [ {String(index + 1).padStart(2, '0')} ]
                 </div>
-                <h3 className="text-primary-foreground font-heading text-lg mb-3">
+                <h3 className="text-darktext font-heading text-lg mb-3">
                   {insight.title}
                 </h3>
-                <p className="text-primary-foreground/80 font-paragraph text-sm leading-relaxed">
+                <p className="text-darktext/80 font-paragraph text-sm leading-relaxed">
                   {insight.summary?.slice(0, 120)}...
                 </p>
-                <div className="mt-4 flex items-center text-primary-foreground/60 text-xs">
+                <div className="mt-4 flex items-center text-secondary text-xs font-semibold">
                   <Brain className="w-3 h-3 mr-2" />
                   {insight.aiModelUsed}
                 </div>
@@ -89,14 +89,14 @@ export default function HomePage() {
             </motion.div>
           ))}
 
-          {/* Central title - inspired by "ORIGINS" */}
+          {/* Central title */}
           <div className="col-span-12 flex items-center justify-center relative z-10">
             <div className="text-center">
               <motion.h1 
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
-                className="font-heading text-8xl md:text-9xl text-primary-foreground leading-none mb-6"
+                className="font-heading text-8xl md:text-9xl text-darktext leading-none mb-6"
               >
                 DISCOVERY
               </motion.h1>
@@ -104,7 +104,7 @@ export default function HomePage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="text-primary-foreground/80 font-paragraph text-lg tracking-wider"
+                className="text-darktext/70 font-paragraph text-lg tracking-wider"
               >
                 AI-DRIVEN SCIENTIFIC RESEARCH
                 <br />
@@ -124,8 +124,8 @@ export default function HomePage() {
                 index === 0 ? 'bottom-16 right-8 w-48' : 'top-48 left-16 w-52'
               }`}
             >
-              <Card className="bg-mutedolive/20 backdrop-blur-sm border-subtleborder/30 p-4">
-                <div className="text-primary-foreground/60 text-xs font-paragraph mb-2">
+              <Card className="bg-white border-subtleborder shadow-sm hover:shadow-md transition-shadow p-4">
+                <div className="text-secondary text-xs font-paragraph mb-2 font-semibold">
                   [ AI-{String(index + 1).padStart(2, '0')} ]
                 </div>
                 {agent.agentImage && (
@@ -138,10 +138,10 @@ export default function HomePage() {
                     />
                   </div>
                 )}
-                <h4 className="text-primary-foreground font-heading text-sm mb-2">
+                <h4 className="text-darktext font-heading text-sm mb-2">
                   {agent.name}
                 </h4>
-                <p className="text-primary-foreground/70 font-paragraph text-xs">
+                <p className="text-darktext/70 font-paragraph text-xs">
                   {agent.specialization}
                 </p>
               </Card>
@@ -220,7 +220,7 @@ export default function HomePage() {
       </section>
 
       {/* Research Plans Preview */}
-      <section className="w-full bg-mutedolive/10">
+      <section className="w-full bg-white">
         <div className="max-w-[100rem] mx-auto px-8 py-24">
           <div className="text-center mb-16">
             <h2 className="font-heading text-5xl text-darktext mb-6">Active Research Initiatives</h2>
@@ -238,7 +238,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
               >
-                <Card className="bg-background border-subtleborder p-8 h-full">
+                <Card className="bg-background border-subtleborder p-8 h-full shadow-sm hover:shadow-md transition-shadow">
                   <div className="flex items-center justify-between mb-6">
                     <span className="text-secondary font-paragraph text-sm font-semibold">
                       {plan.status?.toUpperCase()}
@@ -276,24 +276,24 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action */}
-      <section className="w-full bg-primary">
+      <section className="w-full bg-darktext">
         <div className="max-w-[100rem] mx-auto px-8 py-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-5xl text-primary-foreground mb-6">
+            <h2 className="font-heading text-5xl text-white mb-6">
               Accelerate Scientific Discovery
             </h2>
-            <p className="font-paragraph text-primary-foreground/80 text-lg mb-12 max-w-3xl mx-auto">
+            <p className="font-paragraph text-white/80 text-lg mb-12 max-w-3xl mx-auto">
               Join the next generation of researchers leveraging AI-driven insights, collaborative intelligence, and advanced visualization tools to push the boundaries of human knowledge.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
                 Start Exploring
               </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-darktext">
                 View Documentation
               </Button>
             </div>
